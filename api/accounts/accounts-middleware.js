@@ -9,7 +9,7 @@ exports.checkAccountPayload = (req, res, next) => {
     next({ status: 400, message: "budget of account must be a number" })
   } else if (budget < 0 || budget > 1000000){
     next({ status: 400, message: "budget of account is too large or too small" })
-  } else if ( trimmed.length < 4 || trimmed.length > 100 ){
+  } else if ( trimmed.length < 3 || trimmed.length > 100 ){
     next({ status: 400, message: "name of account must be between 3 and 100" })
   } else {
     next()
